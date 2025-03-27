@@ -1,0 +1,4 @@
+2025-03-26 23:34:37,366 - INFO - Iniciando extração do arquivo: Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf
+2025-03-26 23:34:42,073 - INFO - Extraídas 3392 linhas do PDF
+2025-03-26 23:34:42,093 - INFO - CSV salvo em: output/Rol_Procedimentos.csv
+2025-03-26 23:34:42,094 - INFO - Arquivo ZIP criado: output/Teste_Matheus_Leal.zip
