@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "c8959fdb-c807-4344-a158-9ee2de106bca",
+		"name": "intuitive-care",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43611296",
+		"_collection_link": "https://matheusleal-58517.postman.co/workspace/Matheus-Leal's-Workspace~080349ba-08ac-4554-86b9-96bbda2fcfad/collection/43611296-c8959fdb-c807-4344-a158-9ee2de106bca?action=share&source=collection_link&creator=43611296"
+	},
+	"item": [
+		{
+			"name": "operadoras-de-saude",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/operadoras?q=Itau&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Itau"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
