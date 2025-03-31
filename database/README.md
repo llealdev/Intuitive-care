@@ -6,13 +6,13 @@ Este projeto tem como objetivo estruturar um banco de dados para armazenar infor
 ## Estrutura do Projeto
 O projeto é composto pelos seguintes arquivos:
 
-- `scripts/01_setup.sql` - Criação do schema e tabelas.
-- `scripts/02_import.sql` - Importação dos dados.
-- `scripts/03_analytics.sql` - Consultas analíticas.
-- `docker-compose.yml` - Configuração do ambiente Docker para PostgreSQL e PgAdmin.
+- **scripts/01_setup.sql** - Criação do schema e tabelas.
+- **scripts/02_import.sql** - Importação dos dados.
+- **scripts/03_analytics.sql** - Consultas analíticas.
+- **docker-compose.yml** - Configuração do ambiente Docker para PostgreSQL e PgAdmin.
 
 ## Configuração do Ambiente
-Este projeto utiliza Docker para facilitar a implantação do banco de dados. Certifique-se de ter o Docker e o Docker Compose instalados.
+Este projeto utiliza Docker para facilitar a implantação do banco de dados. Certifique-se de ter o **Docker** e o **Docker Compose** instalados.
 
 ### Passos para Configuração
 1. **Clonar o repositório**:
@@ -21,11 +21,8 @@ Este projeto utiliza Docker para facilitar a implantação do banco de dados. Ce
    cd seu-repositorio
    ```
 
-2. **Baixar os arquivos de dados**:
-   - Demonstrativos Contábeis: [ANS Dados Abertos](https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/)
-   - Dados cadastrais das Operadoras: [ANS Operadoras Ativas](https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/)
-
-   Salve os arquivos CSV na pasta `database/data/`.
+2. **Verificar se os arquivos de dados estão na pasta correta**:
+   - Os arquivos CSV já estão na pasta `database/data/`, garantindo que os dados estejam prontos para importação.
 
 3. **Subir o ambiente Docker**:
    ```sh
@@ -54,42 +51,42 @@ Este projeto utiliza Docker para facilitar a implantação do banco de dados. Ce
      ```
 
 ## Estrutura do Banco de Dados
-### Schema: `ans`
+### Schema: ans
 
-#### Tabela: `operadoras`
+#### Tabela: operadoras
 | Campo | Tipo | Descrição |
 |--------|------|------------|
-| `registro_ans` | VARCHAR(6) | Identificador único da operadora |
-| `cnpj` | VARCHAR(14) | CNPJ da operadora |
-| `razao_social` | VARCHAR(255) | Nome da empresa |
-| `nome_social` | VARCHAR(255) | Nome social |
-| `modalidade` | VARCHAR(200) | Tipo de operadora |
-| `logradouro` | VARCHAR(255) | Endereço |
-| `numero` | VARCHAR(30) | Número |
-| `complemento` | VARCHAR(200) | Complemento |
-| `bairro` | VARCHAR(100) | Bairro |
-| `cidade` | VARCHAR(100) | Cidade |
-| `uf` | CHAR(2) | Estado |
-| `cep` | VARCHAR(8) | CEP |
-| `ddd` | VARCHAR(2) | DDD |
-| `telefone` | VARCHAR(20) | Telefone |
-| `fax` | VARCHAR(15) | Fax |
-| `endereco_eletronico` | VARCHAR(100) | E-mail |
-| `representante` | VARCHAR(255) | Nome do representante |
-| `cargo_representante` | VARCHAR(100) | Cargo do representante |
-| `regiao_de_comercializacao` | VARCHAR(255) | Região de atuação |
-| `data_registro_ans` | DATE | Data do registro |
+| registro_ans | VARCHAR(6) | Identificador único da operadora |
+| cnpj | VARCHAR(14) | CNPJ da operadora |
+| razao_social | VARCHAR(255) | Nome da empresa |
+| nome_social | VARCHAR(255) | Nome social |
+| modalidade | VARCHAR(200) | Tipo de operadora |
+| logradouro | VARCHAR(255) | Endereço |
+| numero | VARCHAR(30) | Número |
+| complemento | VARCHAR(200) | Complemento |
+| bairro | VARCHAR(100) | Bairro |
+| cidade | VARCHAR(100) | Cidade |
+| uf | CHAR(2) | Estado |
+| cep | VARCHAR(8) | CEP |
+| ddd | VARCHAR(2) | DDD |
+| telefone | VARCHAR(20) | Telefone |
+| fax | VARCHAR(15) | Fax |
+| endereco_eletronico | VARCHAR(100) | E-mail |
+| representante | VARCHAR(255) | Nome do representante |
+| cargo_representante | VARCHAR(100) | Cargo do representante |
+| regiao_de_comercializacao | VARCHAR(255) | Região de atuação |
+| data_registro_ans | DATE | Data do registro |
 
-#### Tabela: `demonstracoes`
+#### Tabela: demonstracoes
 | Campo | Tipo | Descrição |
 |--------|------|------------|
-| `id` | SERIAL | Identificador único |
-| `registro_ans` | VARCHAR(6) | Identificador da operadora |
-| `data` | DATE | Data do registro |
-| `cd_conta_contabil` | VARCHAR(200) | Código da conta contábil |
-| `descricao` | VARCHAR(250) | Descrição da conta |
-| `valor_saldo_inicial` | NUMERIC(15,2) | Saldo inicial |
-| `valor_saldo_final` | NUMERIC(15,2) | Saldo final |
+| id | SERIAL | Identificador único |
+| registro_ans | VARCHAR(6) | Identificador da operadora |
+| data | DATE | Data do registro |
+| cd_conta_contabil | VARCHAR(200) | Código da conta contábil |
+| descricao | VARCHAR(250) | Descrição da conta |
+| valor_saldo_inicial | NUMERIC(15,2) | Saldo inicial |
+| valor_saldo_final | NUMERIC(15,2) | Saldo final |
 
 ## Consultas Analíticas
 
@@ -143,7 +140,3 @@ GROUP BY
 ORDER BY
     SUM(valor_saldo_final) DESC, o.razao_social
 LIMIT 10;
-```
-
----
-Este projeto é confidencial e não deve ser compartilhado sem autorização expressa.
