@@ -1,5 +1,5 @@
-import tabula 
-import pandas as pd 
+import tabula
+import pandas as pd
 from pathlib import Path
 import logging 
 import zipfile
