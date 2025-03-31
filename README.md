@@ -1,4 +1,4 @@
-```markdown
+
 # ANS Data Pipeline
 
 Este projeto tem como objetivo coletar, transformar, armazenar e disponibilizar dados sobre operadoras de planos de saúde registradas na **Agência Nacional de Saúde Suplementar (ANS)**. A solução inclui automação de download de arquivos, extração e limpeza de dados, estruturação em banco de dados e disponibilização via API.
@@ -205,4 +205,3 @@ Este projeto integra **Web Scraping, Transformação de Dados, Banco de Dados e 
 ✔️ **Testes e visualização de dados via Postman**  
 
 Caso tenha dúvidas ou precise modificar alguma funcionalidade, consulte a documentação de cada módulo ou me chame pelo linkedin.
-```
